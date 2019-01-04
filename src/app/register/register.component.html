@@ -1,0 +1,22 @@
+<body>
+  <div class="form">
+      <form  [formGroup]="formregister">
+          <h2>Sign Up</h2>
+      
+          <div class="input-box">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+              <input type="text" name="" placeholder="Email" formControlName="email">
+          </div>
+
+          <div class="input-box">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+
+              <input type="password" name="" placeholder="Password" formControlName="password">
+          </div>
+          <div class="input-box">
+              <input type="submit" name="" value="Register" (click)="registerUser()">
+          </div>
+          <a href="#">Forget password</a>
+      </form>
+  </div>
+</body>
