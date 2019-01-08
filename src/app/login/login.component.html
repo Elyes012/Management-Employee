@@ -1,11 +1,11 @@
 <!-- Material form login -->
-
-<div class="container " >
+ 
+<div class="container  ">
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
 
   
-<div class="card">
+<div class="card form pink-skin">
 
     <h5 class="card-header info-color white-text text-center py-4">
       <strong>Sign in</strong>
@@ -19,8 +19,11 @@
   
         <!-- Email -->
         <div class="md-form">
-          <input type="email" id="materialLoginFormEmail" class="form-control" formControlName="email">
-          <label for="materialLoginFormEmail">E-mail</label>
+          
+        
+          <input type="email" id="inputValidationEx" class="form-control validate" formControlName="email">
+  <label for="inputValidationEx" data-error="wrong" data-success="right">Email</label>
+          
         </div>
   
         <!-- Password -->
@@ -34,7 +37,7 @@
             <!-- Remember me -->
             <div class="form-check">
               <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-              <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+              <label class="form-check-label" for="materialLoginFormRemember">Remember me</label> 
             </div>
           </div>
           <div>
@@ -53,19 +56,15 @@
   
         <!-- Social login -->
         <p>or sign in with:</p>
-        <a type="button" class="btn-floating btn-fb btn-sm">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a type="button" class="btn-floating btn-tw btn-sm">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a type="button" class="btn-floating btn-li btn-sm">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a type="button" class="btn-floating btn-git btn-sm">
-          <i class="fab fa-github"></i>
-        </a>
-  
+    
+            
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> &nbsp;
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            
+        
       </form>
       <!-- Form -->
   
@@ -76,3 +75,5 @@
 </div>
 </div>
   <!-- Material form login -->
+
+  

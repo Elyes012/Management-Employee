@@ -1,55 +1,100 @@
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-<h2 class="jumbotron">Employee Register</h2>
-</div>
-</div>
 
-</div>
-<div class="md-form">
-    <i class="fas fa-envelope prefix"></i>
-    <input type="email" id="inputValidationEx" class="form-control validate">
-    <label for="inputValidationEx" data-error="wrong" data-success="right">Type your email</label>
+
+
+<div class="container contact-form">
+  <div class="contact-image">
+      <img src="https://i.imgur.com/pfDBaYu.png" alt="rocket_contact"/>
   </div>
-<form [formGroup]="employeeForm">
-  
-  <div class="form-group">
-    <label>Name</label>
-    <input class="form-control"  type="text" formControlName="firstname" placeholder="First Name">
-  </div>
-
-  <div class="form-group">
-      <label>Lastname</label>
-      <input class="form-control" type="text"   formControlName="lastname" placeholder="lastame">
-    </div>
-
-    <div class="form-group">
-      <label>Position</label>
-      <input class="form-control" type="text"   formControlName="position" placeholder="Position">
-    </div>
-
-    <div class="form-group">
-        <label>Office</label>
-        <input class="form-control" type="text"  formControlName="office" placeholder="Office">
-      </div>
-
-      <div class="form-group">
-        <label>Email</label>
-        <input class="form-control" type="email"  formControlName="email" placeholder="email">
-      </div>
-
-      <div class="form-group">
-          <label>Salary</label>
-          <div class="input-group">
-            <div class="input-group-addon">
-                <i class="fas fa-dollar-sign"></i>
-            </div>
-              <input class="form-control" type="number"  formControlName="salary" placeholder="Salary">
+  <form [formGroup]="employeeForm">
+      <h3>Add Employee</h3>
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <input type="text" name="txtName" class="form-control"  formControlName="firstname" placeholder="  First Name *" value="" />
+              </div>
+              <div class="form-group">
+                  <input type="text" name="txtEmail" class="form-control"  formControlName="lastname" placeholder="Last Name *" value="" />
+              </div>
+              <div class="form-group">
+                  <input type="text" name="txtPhone" class="form-control"  formControlName="position" placeholder="Position *" value="" />
+              </div>
+              <div class="form-group">
+                  <input type="submit" name="btnSubmit" class="btnContact" (click)="addEmployee()" value="Send Message" />
+              </div>
           </div>
-          <div class="form-group">
-       <button class="btn default" type="submit" (click)="addEmployee()">Submit</button>  
-       <button class="btn default" type="button" (click)="resetForm(employeeForm)">Reset</button>  
+          <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-group">
+                  <input type="text" name="txtName" class="form-control" formControlName="office" placeholder="Office *" value="" />
+              </div>
+              <div class="form-group">
+                <input type="text" name="txtName" class="form-control" formControlName="email" placeholder="Email *" value="" />
+            </div>
+            <div class="form-group">
+              <input type="number" name="txtName" class="form-control" formControlName="salary" placeholder="Salary *" value="" />
+          </div>
+              </div>
+
+              <div class="form-group">
+                  <input type="submit" name="btnSubmit" class="btnContact" (click)="resetForm(employeeForm)" value="Reset Form" />
+              </div>
+          </div>
       </div>
-        </div>
-</form>
+  </form>
+</div>
+
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form [formGroup]="employeeForm" class="contact100-form validate-form">
+            <span class="contact100-form-title">
+                Contact Us
+            </span>
+
+            <label class="label-input100" for="first-name">Your Name *</label>
+            <div class="wrap-input100 rs1 validate-input" >
+                <input id="first-name" class="input100" type="text" name="first-name" placeholder="First name"  formControlName="firstname">
+                <span class="invalidinput" *ngIf ="employeeForm.controls.firstname.invalid"></span>
+               
+            </div> <i class="fas fa-check" *ngIf ="employeeForm.controls.firstname.valid"></i>
+            <div class="wrap-input100 rs1 validate-input">
+                <input class="input100" type="text" name="last-name" placeholder="Last name"  formControlName="lastname">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="email">Position *</label>
+            <div class="wrap-input100 validate-input">
+                <input id="email" class="input100" type="text"   placeholder="Eg. example@email.com" formControlName="position">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Office *</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="text"   placeholder="Office" formControlName="office">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Email *</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="email" name="phone" placeholder="Eg. example@email.com" formControlName="email"> 
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Salary *</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="text" name="phone" placeholder="Salary" formControlName="salary">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" type="submit" (click)="addEmployee()">
+                    <span>
+                        Submit
+                        <i class="zmdi zmdi-arrow-right m-l-8"></i>
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

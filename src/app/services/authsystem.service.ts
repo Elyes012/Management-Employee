@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import { map } from 'rxjs/internal/operators/map';
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
@@ -27,4 +27,15 @@ export class AuthsystemService {
         console.log('not ok:', err.message);
       });
   }
+
+  getAuth() {
+    return this.fauth.authState.pipe(map(myAuth => myAuth));
+    }
+
+    userDisconnect() {
+      this.fauth.auth.signOut();
+      console.log('loggout');
+      this.router.navigateByUrl('/login');
+      }
+    
 }

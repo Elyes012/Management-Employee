@@ -81,7 +81,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "./mains.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
